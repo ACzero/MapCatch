@@ -63,6 +63,8 @@ function postMessage()
 		mapObj.clearMap();
 		document.getElementById('resultInfo').innerHTML ="上传成功";
 		document.getElementById('nameInput').value = "";
+        document.getElementById('tucao').value = "";
+        document.getElementById('type').value = 1;
         result = null;
 		return;
 	}
@@ -84,12 +86,26 @@ function request () {
     xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 	xmlhttp.send(str);
 }
+
+function reset()
+{
+    document.getElementById('resultInfo').innerHTML ="";
+    document.getElementById('nameInput').value = "";
+    document.getElementById('tucao').value = "";
+    document.getElementById('type').value = 1;
+    mapObj.clearMap();
+    result = null;
+    mapObj.setZoomAndCenter(15,new AMap.LngLat(113.346003,23.152412));
+}
+
 </script>
 </head>
 <body onLoad="mapInit()">
     <div id="iCenter"></div>
-    <div style="margin-top:10px;margin-left:10px">使用说明:在地图上单击鼠标开始选点,选好建筑物轮廓之后，单击右键结束选点并填写建筑物信息,点击按钮上传</div>
-    <div id="messageBox" style="margin-top:10px;margin-left:50px;color:black;">
+    <div style="margin-top:10px;margin-left:10px">
+    <font size="3">使用说明:<br/>在地图上单击鼠标开始选点,选好建筑物轮廓之后，单击右键结束选点并填写建筑物信息,点击按钮上传(PS:若选取多个轮廓,只会按最后选取的轮廓上传,请清除覆盖物后重选~)</font>
+    </div>
+    <div id="messageBox" style="margin-top:20px;margin-left:50px;color:black;">
     	分类：
     	<select id="type" style="color:black">
     		<option value="1">1</option>
@@ -104,6 +120,7 @@ function request () {
     </div>
     <div id="resultInfo" style="margin-top:10px;margin-left:10px;height:50px;color:black">多边形节点数：0</div>
     <div><button style="color:black" onclick="clearMap()">清除覆盖物</button>
+    <br/><br/><button style="color:black" onclick="reset()">重置地图</button>
     </div>
 
 </body>
