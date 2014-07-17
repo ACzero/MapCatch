@@ -47,6 +47,8 @@ function GetAllData()
 	{
 		@$obj->features[$count]->type = "Feature";
 		@$obj->features[$count]->properties->name = $eachHotsopt['name'];
+		@$obj->features[$count]->properties->type = $eachHotsopt['type'];
+		@$obj->features[$count]->properties->other = $eachHotsopt['other'];
 
 		$query_b = "SELECT * FROM points WHERE tag = '".$eachHotsopt['key']."'";
 		$result_b = mysql_query($query_b);
@@ -64,6 +66,6 @@ function GetAllData()
 	}
 
 	var_dump($obj);
-	file_put_contents('./export.json', json_encode($obj,JSON_UNESCAPED_UNICODE));
+	file_put_contents('./export.json', json_encode($obj));
 }
 ?>
