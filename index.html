@@ -64,7 +64,6 @@ function postMessage()
 		document.getElementById('resultInfo').innerHTML ="上传成功";
 		document.getElementById('nameInput').value = "";
         document.getElementById('tucao').value = "";
-        document.getElementById('type').value = 1;
         result = null;
 		return;
 	}
@@ -92,7 +91,6 @@ function reset()
     document.getElementById('resultInfo').innerHTML ="";
     document.getElementById('nameInput').value = "";
     document.getElementById('tucao').value = "";
-    document.getElementById('type').value = 1;
     mapObj.clearMap();
     result = null;
     mapObj.setZoomAndCenter(15,new AMap.LngLat(113.346003,23.152412));
@@ -108,10 +106,12 @@ function reset()
     <div id="messageBox" style="margin-top:20px;margin-left:50px;color:black;">
     	分类：
     	<select id="type" style="color:black">
-    		<option value="1">1</option>
-    		<option value="2">2</option>
-    		<option value="3">3</option>
-    		<option value="4">4</option>
+    		<option value="学生宿舍">学生宿舍</option>
+    		<option value="居民住宅">居民住宅</option>
+    		<option value="教学楼">教学楼</option>
+    		<option value="学院楼">学院楼</option>
+    		<option value="公共设施">公共设施</option>
+    		<option value="道路">道路</option>
     	</select>
     	<br/><br/>
     	地点名称：<input id="nameInput" type="text" name="name" style="color:black"/><br/><br/>
