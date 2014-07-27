@@ -16,7 +16,7 @@ function mapInit(){
     mapObj = new AMap.Map("iCenter",{
     	zooms:[13,19],
     	view: new AMap.View2D({
-            center:new AMap.LngLat(113.346003,23.152412),//地图中心点
+            center:new AMap.LngLat(113.405655,23.04841),//地图中心点
             zoom:15 //地图显示的缩放级别
         })
     });
@@ -93,7 +93,7 @@ function reset()
     document.getElementById('tucao').value = "";
     mapObj.clearMap();
     result = null;
-    mapObj.setZoomAndCenter(15,new AMap.LngLat(113.346003,23.152412));
+    mapObj.setZoomAndCenter(15,new AMap.LngLat(113.405655,23.04841));
 }
 
 </script>
