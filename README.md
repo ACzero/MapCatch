@@ -1,2 +1,2 @@
 # MapCatch
-get map data from api
+draw map boundary manually
